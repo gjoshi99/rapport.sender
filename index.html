@@ -11,11 +11,63 @@
 </body>
 <script>
 const button = document.querySelector('button');
-let datum = new Date();
-let name = prompt('skriv in ditt namn och anställnigsnummer')
-button.addEventListener('click', ()=> {
-location.assign(`mailto:fredrik.holm@hhs.se,premisescaretaker@hhs.se,richard.buske@kronan.eu,daniel.ekelof@hhs.se?subject= Tjänsterapport: ${datum}!&body=\n\n %0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%0AMed vänliga hälsningar:\n${name}`);
-})
+let year = new Date().getFullYear();
+let month = new Date().getMonth() + 1;
+// this defienes month
+if(month == 1) {
+    month = "Januari"
+}else if (month == 2) {
+    month = "februari"
+}else if (month == 3) {
+    month = "mars"
+}else if (month == 4) {
+    month = "april"
+}else if (month == 5) {
+    month = "Maj"
+}
+else if (month == 6) {
+    month = "Juni"
+}
+else if (month == 7) {
+    month = "Juli"
+}
+else if (month == 8) {
+    month = "Augusti"
+}
+else if (month == 9) {
+    month = "September"
+}
+else if (month == 10) {
+    month = "Oktober"
+}
+else if (month == 11) {
+    month = "November"
+}
+else if (month == 12) {
+    month = "December"
+}
+// this defiens shift
+let shift = new Date().getHours();
+if(shift <= 8 && shift >= 20) {
+    shift = "nattens"
+}else if (shift >= 7 && shift <= 21)
+{
+    shift = "dagens"
+}
+console.log(shift);
 
+let day = new Date().getDay();
+let name = prompt('skriv in ditt namn och anställnigsnummer')
+if(name >= length) {
+    window.location.reload()
+}
+button.addEventListener('click', ()=> {
+location.assign(`mailto:fredrik.holm@hhs.se,premisescaretaker@hhs.se,richard.buske@kronan.eu,daniel.ekelof@hhs.se?subject= ${shift} Tjänsterapport: ${year} ${month} ${day}&body=\n\n %0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%0AMed vänliga hälsningar:\n %0A${name}`);
+
+setTimeout(()=>{
+window.close()
+}, 15000)
+
+})
 </script>
 </html>
