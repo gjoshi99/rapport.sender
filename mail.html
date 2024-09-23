@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>mail</title>
+</head>
+<body style="display: flex ; background-color: lightskyblue; height: 100vh; justify-content: center; align-items: center; ">
+
+    <button style="height: 100px; width: 100px; border-radius: 20%; ">mail
+    </button>
+    
+</body>
+<script>
+const button = document.querySelector('button');
+let datum = new Date();
+let name = prompt('skriv in ditt namn och anställnigsnummer')
+button.addEventListener('click', ()=> {
+location.assign(`mailto:?subject= Tjänsterapport: ${datum}!&body= my name i ${name}`);
+})
+
+</script>
+</html>
