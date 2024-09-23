@@ -5,7 +5,7 @@
 </head>
 <body style="display: flex ; background-color: lightskyblue; height: 100vh; justify-content: center; align-items: center; ">
 
-    <button style="height: 300px; width: 300px; border-radius: 20%; ">mail
+    <button style="height: 300px; width: 300px; border-radius: 20%; background-color: rgb(191, 184, 184); ">mail
     </button>
     
 </body>
@@ -14,7 +14,7 @@ const button = document.querySelector('button');
 let datum = new Date();
 let name = prompt('skriv in ditt namn och anställnigsnummer')
 button.addEventListener('click', ()=> {
-location.assign(`mailto:fredrik.holm@hhs.se,premisescaretaker@hhs.se,richard.buske@kronan.eu,daniel.ekelof@hhs.se?subject=Tjänsterapport:${datum}!&body= my name i ${name}`);
+location.assign(`mailto:fredrik.holm@hhs.se,premisescaretaker@hhs.se,richard.buske@kronan.eu,daniel.ekelof@hhs.se?subject= Tjänsterapport: ${datum}!&body=\n\n %0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%0AMed vänliga hälsningar:\n${name}`);
 })
 
 </script>
