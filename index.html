@@ -56,13 +56,13 @@ if(shift <= 8 && shift >= 20) {
 }
 console.log(shift);
 
-let day = new Date().getDate();
+let day = new Date().getDay();
 let name = prompt('skriv in ditt namn och anställnigsnummer')
-if(name >= length) {
+if(name.length <= 10) {
     window.location.reload()
 }
 button.addEventListener('click', ()=> {
-location.assign(`mailto:fredrik.holm@hhs.se,premisescaretaker@hhs.se,richard.buske@kronan.eu,daniel.ekelof@hhs.se?subject= ${shift} Tjänsterapport: ${year} ${month} ${day}&body=\n\n %0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%0AMed vänliga hälsningar:\n %0A${name}`);
+location.assign(`mailto:fredrik.holm@hhs.se,premisescaretaker@hhs.se,richard.buske@kronan.eu,daniel.ekelof@hhs.se?subject= ${shift}Tjänsterapport: ${year} ${month} ${day}&body=\n\n %0A%0A%0A%0AMed vänliga hälsningar:\n %0A${name}`);
 
 setTimeout(()=>{
 window.close()
