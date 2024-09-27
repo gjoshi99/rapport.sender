@@ -3,14 +3,19 @@
 <head>
     <title>mail</title>
 </head>
+<link rel="stylesheet" href="button.css">
 <body style="display: flex ; background-color: lightskyblue; height: 100vh; justify-content: center; align-items: center; ">
 
-    <button style="height: 300px; width: 300px; border-radius: 20%; background-color: rgb(191, 184, 184); ">mail
-    </button>
+    <button>tryck här för rapportering</button>
     
 </body>
 <script>
 const button = document.querySelector('button');
+let name = prompt('Skriv in ditt namn och anställningsnummer');
+if (name === null || (name.length >= 0 && name.length <= 8)) {
+    window.location.reload();
+}
+
 let year = new Date().getFullYear();
 let month = new Date().getMonth() + 1;
 // this defienes month
@@ -57,16 +62,13 @@ if(shift <= 8 && shift >= 20) {
 console.log(shift);
 
 let day = new Date().getDate();
-let name = prompt('skriv in ditt namn och anställnigsnummer')
-if(name.length <= 10) {
-    window.location.reload()
-}
 button.addEventListener('click', ()=> {
-location.assign(`mailto:fredrik.holm@hhs.se,premisescaretaker@hhs.se,richard.buske@kronan.eu,daniel.ekelof@hhs.se,securitasstockholm.nord@securitas.se?subject= ${shift}Tjänsterapport: ${year} ${month} ${day}&body=\n\n %0A%0A%0A%0AMed vänliga hälsningar:\n %0A${name}`);
+location.assign(`mailto:fredrik.holm@hhs.se,premisescaretaker@hhs.se,richard.buske@kronan.eu,daniel.ekelof@hhs.se?subject= ${shift}Tjänsterapport: ${year} ${month} ${day}&body=\n\n %0A%0A%0A%0AMed vänliga hälsningar:\n %0A${name}`);
 
-setTimeout(()=>{
-window.close()
-}, 15000)
+
+set.timout(() => {
+    window.close();
+},15000)
 
 })
 </script>
