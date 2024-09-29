@@ -66,7 +66,7 @@ button.addEventListener('click', ()=> {
 location.assign(`mailto:fredrik.holm@hhs.se,premisescaretaker@hhs.se,richard.buske@kronan.eu,daniel.ekelof@hhs.se?subject= ${shift}Tjänsterapport: ${year} ${month} ${day}&body=\n\n %0A%0A%0A%0AMed vänliga hälsningar:\n %0A${name}`);
 
 
-set.timout(() => {
+setTimout(() => {
     window.close();
 },15000)
 
